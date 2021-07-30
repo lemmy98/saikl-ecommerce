@@ -1,0 +1,10 @@
+<form action=”app_name:customer_info” method=”post”>
+    
+    {% csrf_token %} 
+    
+    <div class=”container”>
+        {{customer_info_form.as_p}}
+    </div>
+    
+    <input type=”Submit” value=”Make Payment”>
+</form>

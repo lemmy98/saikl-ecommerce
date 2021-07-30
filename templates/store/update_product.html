@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    body{
+        background-color: lightblue;
+    }
+    .profile-pic{
+        max-width: 300px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 30%;
+    }
+    .row{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+</style>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+        <div class="card card-body">
+
+            <form action="" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <input type="submit" class="btn btn-primary" name="Update Product">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+    <br>
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    body{
+        background-color: lightblue;
+    }
+    .profile-pic{
+        max-width: 300px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 30%;
+    }
+    .row{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+</style>
+
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <!-- <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Profile</a> -->
+            <!-- <hr> -->
+            <h3 style="text-align: center;">Profile</h3>
+            <hr>
+            <img class="profile-pic" src="{{request.user.customer.image_url}}" alt="">
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card card-body">
+
+            <form action="" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <input type="submit" class="btn btn-primary" name="Update Information">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+    <br>
+
+
+
+<!-- <div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Product</th>
+                    <th>Note</th>
+                    <th>Date Ordered</th>
+                    <th>Status</th>
+                </tr>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{order.product}}</td>
+                        <td>{{order.note}}</td>
+                        <td>{{order.date_created}}</td>
+                        <td>{{order.status}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div> -->
+
+
+{% endblock %}

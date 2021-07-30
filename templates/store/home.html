@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script>
+        function bigImg(x) {
+            x.style.height = "600px";
+            x.style.width = "500px";
+          }
+    </script>
+{% endblock %}
+
+
+{% block content %}
+<br><br><br>
+<section class="s2">
+    <div class="main-container">
+        <div class="about-wrapper">
+            <div class="about-me">
+
+
+                <img id="social_img" class="gif" src="https://cdn2.hubspot.net/hubfs/4001288/ecommerce-subway-studio-malaysia%20%281%29.gif" alt="">
+            </div>
+
+            <div class="social-link">
+
+                <h3 class="txt">SAIKL</h3>
+
+                <p id="txt">Shop With US </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services">
+
+    <div class="container">
+        <h1 id="h1">Our Services</h1>
+        <div class="row services" >
+            <div class= "col-md-4 text-center">
+                <div class="icon">
+                <i class="fa fa-phone"></i>
+                </div>
+                <h3> 24/7 Support</h3>
+                <p>on order related queries</p>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                <i class="fa fa-shopping-cart"></i>
+                </div>
+                <h3> Return within 30 days</h3>
+                <p>of receiving your order</p>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="icon">
+                <i class="fa fa-truck"></i>
+                </div>
+                <h3>Get free delivery</h3>
+                <p>on purchase above &#x20A6;2000</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer class="footer">
+    <p><i class="fas fa-copyright"></i>2020 Lemikan Ecommerce</p><a href="#" class="footer-link"></a>
+    <ul class="social-list">
+        <li class="social-list__item"><a href="https://github.com" class="social-list__link"><i class="fab fa-github"></i></a></li>
+        <li class="social-list__item"><a href="https://linkedin.com" class="social-list__link"><i class="fab fa-linkedin"></i></a></li>
+        <li class="social-list__item"><a href="https://twitter.com" class="social-list__link"><i class="fab fa-twitter"></i></a></li>
+    </ul>
+</footer>
+
+
+
+
+{% endblock %}
+

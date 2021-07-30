@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <br>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card card-body">
+    
+                <div class="product-detail">
+                    <img src="{{ product.imageURL}}">
+                    <h1>{{ product.name }}</h1>
+                    <h2>
+                    <a href="{{ product.category.get_absolute_url }}">
+                    {{ product.category }}
+                    </a>
+                    </h2>
+                    <p class="price">${{ product.price }}</p>
+                    {{ product.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <br>
+    
+
+{% endblock %}

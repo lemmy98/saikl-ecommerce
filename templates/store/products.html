@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="container">
+        <div class="float-left">
+            <h3>Products</h3> 
+        </div>
+        <div class="float-right btn btn-primary">
+            <a style="color: white;" href="{% url 'addproduct' %}">Add Product &nbsp; <span><i class="fas fa-plus"></i></span></a> 
+        </div>
+       
+    </div>
+       
+   
+    <br>
+    <br><br>
+
+    <div class="row">
+        {% for product in products %}
+            <div class="col-lg-4 now">
+                <img src="{{product.imageURL}}" class="thumbnail" alt="">
+                <div class="box-element product">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h6>{{product.name}}</h6>
+                            <h6>&#x20A6;{{product.price|floatformat:2}}</h6>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{% url 'updateproduct' product.id %}" class="btn btn-outline-success float-right">Update</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+       
+    </div>
+    
+    
+    <br>
+
+</div>
+
+
+{% endblock %}

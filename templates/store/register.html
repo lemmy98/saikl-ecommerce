@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<br>
+<section class="signup">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <h2 class="form-title">Sign up</h2>
+                <form method="POST" class="register-form" id="register-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i></label>
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i></label>
+                        {{form.email}}
+                    </div>
+                    <div class="form-group">
+                        <label for="pass"><i class="fas fa-lock"></i></label>
+                        {{form.password1}}
+                    </div>
+                    <div class="form-group">
+                        <label for="re-pass"><i class="fas fa-lock"></i></label>
+                        {{form.password2}}
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                    </div>
+                </form>
+            </div>
+
+            
+
+            <div class="signup-image">
+                <figure><img src="{% static 'images/lr_images/signup-image.jpg' %}" alt="Register image"></figure>
+                <a href="{% url 'login' %}" class="signup-image-link">I am already member</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder=' Username..';
+    form_fields[2].placeholder=' Email..';
+    form_fields[3].placeholder=' Enter Password..';
+    form_fields[4].placeholder=' Re-enter Password..';
+
+</script>
+
+
+
+{% endblock %}
+
